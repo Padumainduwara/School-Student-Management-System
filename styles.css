@@ -1,0 +1,181 @@
+/* General Reset */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* Body Styling */
+
+body {
+    font-family: 'Arial', sans-serif;
+}
+
+
+/* Navbar Styling */
+
+.navbar {
+    background-color: #7B1113;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.navbar .logo {
+    display: flex;
+    align-items: center;
+}
+
+.navbar .logo img {
+    width: 50px;
+    height: auto;
+    margin-right: 10px;
+}
+
+.navbar .logo h1 {
+    color: #fff;
+    font-size: 1.5rem;
+}
+
+.navbar .nav-links {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.navbar .nav-links li {
+    margin-left: 20px;
+}
+
+.navbar .nav-links a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.navbar .nav-links a:hover {
+    color: #f3e5f5;
+}
+
+
+/* Landing Section */
+
+.landing {
+    background-image: url('./Images/background.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    position: relative;
+}
+
+.landing::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.landing .landing-content {
+    position: relative;
+    z-index: 1;
+}
+
+.landing .main-logo {
+    width: 150px;
+    margin-bottom: 20px;
+}
+
+.landing h1 {
+    font-size: 2.5rem;
+    /* Reduced font size for responsiveness */
+    margin-bottom: 20px;
+}
+
+.landing p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.landing .cta-btn {
+    background-color: #771c00;
+    padding: 10px 20px;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    margin: 10px;
+    font-weight: bold;
+    display: inline-block;
+    /* Ensures buttons stay inline */
+}
+
+.landing .cta-btn:hover {
+    background-color: #ce1f00;
+}
+
+
+/* Responsive Styles */
+
+@media (max-width: 768px) {
+    .navbar .nav-links {
+        flex-direction: column;
+        /* Stack nav items vertically */
+        background-color: #ac2800;
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        /* Adjust position based on navbar height */
+        left: 0;
+        display: none;
+        /* Hidden by default */
+    }
+    .navbar .nav-links.show {
+        display: flex;
+        /* Show when toggled */
+    }
+    .navbar .nav-links li {
+        margin: 10px 0;
+        /* Add spacing between vertical items */
+    }
+    .navbar .toggle {
+        display: block;
+        /* Show toggle button */
+        cursor: pointer;
+    }
+    .landing h1 {
+        font-size: 2rem;
+        /* Adjust for smaller screens */
+    }
+}
+
+
+/* For Mobile Toggle Button */
+
+.toggle {
+    display: none;
+    /* Initially hidden */
+}
+
+@media (max-width: 768px) {
+    .toggle {
+        display: block;
+        background-color: #ac2800;
+        color: #fff;
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+    }
+}
